@@ -12,6 +12,8 @@ class ColorPickerModal extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final colorOptions = ref.watch(colorsProvider);
+    final selectedColor = ref.watch(selectedColorProvider);
+
     return SizedBox(
       height: 450.h,
       child: Padding(
@@ -42,25 +44,28 @@ class ColorPickerModal extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   final colorName = colorOptions.keys.toList()[index];
                   final color = colorOptions.values.toList()[index];
+                  final isSelectedColor = selectedColor == color;
                   return GestureDetector(
                     onTap: () {
-                      ref.read(selectedColorProvider.notifier).state = color; 
-                      //print(color);
+                      ref.read(selectedColorProvider.notifier).changeColor(color);
                       Navigator.pop(context);
                     },
                     child: Row(
                       children: [
                         Container(
-                            width: 45,
-                            height: 45,
-                            decoration: const BoxDecoration()
-                                .withColor(color)
-                                .withShape(BoxShape.circle)),
+                          width: 45,
+                          height: 45,
+                          decoration: const BoxDecoration()
+                              .withColor(color)
+                              .withShape(BoxShape.circle),
+                        ),
                         10.sbW,
                         colorName.txtStyled(
                           fontSize: 17.5,
                           fontWeight: FontWeight.bold,
                         ),
+                        const Spacer(),
+                        if (isSelectedColor) CustomIcons.activeSwitchIcon.iconslide(size: 21, color: const Color.fromARGB(255, 0, 255, 8)),
                         55.sbH
                       ],
                     ),
@@ -74,3 +79,4 @@ class ColorPickerModal extends ConsumerWidget {
     );
   }
 }
+

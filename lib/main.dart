@@ -23,7 +23,7 @@ class MyApp extends ConsumerWidget {
                 theme: ref.watch(themeNotifierProvider),
                 title: 'Flutter Riverpod Counter App',
                 debugShowCheckedModeBanner: false,
-                home: const RiverNavBar()));
+                home: const RiverNavBar())); 
       },
     );
   }

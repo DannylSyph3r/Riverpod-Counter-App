@@ -4,6 +4,7 @@ class Pallete {
   static const blackColor = Color.fromRGBO(1, 1, 1, 1);
   static const whiteColor = Color.fromARGB(255, 255, 255, 255);
   static const greyColor = Color.fromARGB(255, 173, 173, 173);
+  static const greenColor = Color.fromARGB(255, 0, 253, 8);
   static const transparent = Colors.transparent;
   static const buttonOutineColorBlack = Color.fromRGBO(1, 1, 1, 1);
   static const buttonOutineColorWhite = Colors.white;

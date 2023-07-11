@@ -45,7 +45,7 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
                     padding: 7.5,
                     height: 32,
                     width: 72,
-                    activeColor: ref.watch(selectedColorProvider.notifier).state,
+                    activeColor: primaryColorFill,
                     inactiveColor: currentTheme.colorScheme.secondary,
                     activeTextColor: Pallete.whiteColor,
                     inactiveTextColor: Pallete.whiteColor,

@@ -27,6 +27,7 @@ class _RiverpodCounterViewState extends ConsumerState<RiverpodCounterView> {
 
   @override
   Widget build(BuildContext context) {
+    final primaryColorFill = ref.watch(selectedColorProvider);
     return Scaffold(
       appBar: AppBar(
         title: Padding(
@@ -54,7 +55,7 @@ class _RiverpodCounterViewState extends ConsumerState<RiverpodCounterView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   StylishCLickButton(
-                      buttonColor: ref.watch(selectedColorProvider.notifier).state,
+                      buttonColor: primaryColorFill,
                       onPressed: () {},
                       buttonOutineColor:
                           Theme.of(context).colorScheme.brightness ==
@@ -64,7 +65,7 @@ class _RiverpodCounterViewState extends ConsumerState<RiverpodCounterView> {
                       child: CustomIcons.solutionIcon.iconslide(size: 21)),
                   35.sbW,
                   StylishCLickButton(
-                      buttonColor: ref.watch(selectedColorProvider.notifier).state,
+                      buttonColor: primaryColorFill,
                       onPressed: () {},
                       buttonOutineColor:
                           Theme.of(context).brightness ==

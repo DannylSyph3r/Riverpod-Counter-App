@@ -34,7 +34,7 @@ class _RiverNavBarState extends ConsumerState<RiverNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    final selectedColor = ref.watch(selectedColorProvider.notifier).state;
+    final selectedColor = ref.watch(selectedColorProvider);
     return Scaffold(
         body: ValueListenableBuilder(
           valueListenable: _page,
@@ -53,24 +53,19 @@ class _RiverNavBarState extends ConsumerState<RiverNavBar> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      NavBarWidget(
-                        onTap: () => _page.value = 0,
-                        icon: PhosphorIcons.bold.house,
-                        label: '',
-                        color: _page.value == 0 ? selectedColor : null,
-                        fontWeight: _page.value == 0 ? FontWeight.w600 : null,
-                      ),
-                      NavBarWidget(
-                        onTap: () => _page.value = 1,
-                        icon: PhosphorIcons.bold.gear,
-                        label: '',
-                        color: _page.value == 1 ? selectedColor : null,
-                        fontWeight: _page.value == 1 ? FontWeight.w600 : null,
-                      ),
-                    ],
+                  NavBarWidget(
+                    onTap: () => _page.value = 0,
+                    icon: PhosphorIcons.bold.house,
+                    label: '',
+                    color: _page.value == 0 ? selectedColor : null,
+                    fontWeight: _page.value == 0 ? FontWeight.w600 : null,
+                  ),
+                  NavBarWidget(
+                    onTap: () => _page.value = 1,
+                    icon: PhosphorIcons.bold.gear,
+                    label: '',
+                    color: _page.value == 1 ? selectedColor : null,
+                    fontWeight: _page.value == 1 ? FontWeight.w600 : null,
                   ),
                 ],
               ),
