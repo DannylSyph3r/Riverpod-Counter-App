@@ -65,7 +65,7 @@ class _RiverpodCounterViewState extends ConsumerState<RiverpodCounterView> {
                         final operation = _inputFieldController.text;
                         ref
                             .read(counterProvider.notifier)
-                            .performCounterOperations(operation);
+                            .performCounterOperations(context, operation);
                         _inputFieldController.clear();
                       },
                       buttonOutineColor:

@@ -7,6 +7,7 @@ class AppTexts {
   static const settingsAppBarText = "App Settings";
   static const darkModeText = "Dark Mode";
   static const primaryColorText = "Primary Color";
+  static const divisionWarningModalText = "Ok, Got it!";
 }
 
 class CustomIcons {
